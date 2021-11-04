@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, 
+  maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="title" content="홍익대학교 디지털미디어디자인 전공 졸업전시회 2019 - BREATHE">
+	<meta name="keywords" content="2019, 홍익대학교, 홍익대, 홍대, 홍익, 조형, 조형대, 조형대학, 예술대학, 예대, 미술대학, 미대, 시각디자인, 시디, 산업디자인, 산디, 커뮤니케이션, 커디, 프로덕트, 프디, 영상, 영화, 영영, 영애, 애니메이션, 애니, 디지털, 미디어, 디자인, 디미디, 딤디, 졸전, 졸업전시, 졸업전시회, 전시회, 졸업작품, 졸작, 아트센터, 혜화, 브리드, 브레스, 브레쓰, 브래스, 브래쓰, 졸준위, 졸업, 준비, 전시, 위원회, 유엑스, 유아이, 인터랙션, 인터액션, 인터렉션, 인터렉티브, 인터페이스, 모션, 그래픽, 브랜딩, 웹, 웹사이트, 앱, 어플리케이션, 애플리케이션, 트렌드, 코딩, 모바일, 모바일웹, 숨, 숨쉬다, 정대교, 우경민, 백지웅, jeong, daekyo, woo, kyungmin, baek, jiwoong, hongik, university, univ, school of, arts, and, design, digital, media, dmd, archive, exhibition, graduation, show, grad, center, breathe, a digital, breath, into the world, comes alive, convergence, multi, ux, ui, inter, face, interaction, interactive, motion, graphic, branding, bx, vr, ar, bi, ci, app, application, installation, mobile, service, coding, code, coded, wearable, tech, technology, flexible, trend, trending">
+	<meta name="description" content="HONGIK UNIV. DIGITAL MEDIA DESIGN GRADUATION EXHIBITION 2019 - BREATHE">
+	<meta name="author" content="Kyungmin Woo/Daekyo Jeong/Jiwoong Baek">
+	
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="static/css/keyframe.css">
+
+	<script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/bradley/Blotter/3007fe6e/build/materials/fliesMaterial.js"></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="static/icon/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static/icon/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/icon/favicon/favicon-16x16.png">
+	<link rel="manifest" href="static/icon/favicon/site.webmanifest">
+	<link rel="mask-icon" href="static/icon/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Noto+Sans+KR:300,400,500,700,900&display=swap&subset=korean');
+
+	</style>
+
+	<title>BREATHE - demo</title>
+
+	<script>
+		//                $(document).ready(function() {
+		//                    $('#loading').fadeIn(1000);
+		//                });
+
+		$(window).load(function() {
+			$('#loading').fadeOut(1500);
+		});
+
+	</script>
+
+</head>
+
+<body style="overflow: hidden;">
+
+	<div id="loading">
+		<div id="breathing"></div>
+		<script>
+			container = document.getElementById("breathing");
+
+			var text = new Blotter.Text("O", {
+				family: "Lato",
+				size: 200,
+				weight: 300,
+				fill: "#fff",
+				paddingLeft: 0,
+				paddingRight: 0,
+				paddingTop: 0,
+				paddingBottom: 0
+			});
+
+			var material = new Blotter.FliesMaterial();
+			material.uniforms.uPointCellWidth.value = 0.03;
+			material.uniforms.uPointRadius.value = 0.5;
+			material.uniforms.uSpeed.value = 2;
+
+			var blotter = new Blotter(material, {
+				texts: text
+			});
+
+			var scope = blotter.forText(text);
+			scope.appendTo(container);
+
+		</script>
+	</div>
+	<div id="video-background"></div>
+	<input type="checkbox" class="checkbox" id="nav-toggle">
+	<label for="nav-toggle" class="nav-toggle-btn">
+		<span class="nav-icon"></span>
+	</label>
+	<div class="overlay"></div>
+	<div class="nav">
+		<ul class="nav-list">
+			<li class="nav-item"><a href="about.html" class="nav-link outline">
+					<h1>About</h1>
+				</a></li>
+			<li class="nav-item"><a href="works.html" class="nav-link outline">
+					<h1>Works</h1>
+				</a></li>
+			<li class="nav-item"><a href="designer.html" class="nav-link outline">
+					<h1>Designer</h1>
+				</a></li>
+		</ul>
+		<footer id="footer-nav">
+			<span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+		</footer>
+	</div>
+
+	<a href="index.html" class="logo">
+		<div class="logo-svg">
+			<img src="static/logo/logo2.gif" alt="" id="logo-symbol">
+			<img src="static/logo/logotype.svg" alt="" id="logo-type">
+		</div>
+	</a>
+
+	<div class="wrap">
+		<div class="video-box" id="video-box">
+			<video class="video" id="video1" width="100%" height="auto" src="static/video/mov1.mp4" preload="auto"></video>
+			<video class="video" id="video2" width="100%" height="auto" src="static/video/mov2.mp4" preload="auto"></video>
+			<div class="video-close-button" id="video-close-button">
+				<img src="static/icon/exit.svg" alt=""></div>
+		</div>
+
+		<div id="bg-particles"></div>
+		<canvas id="main">
+			크롬에서 실행해 주세요.
+		</canvas>
+
+		<div id="main-box">
+			<div id="act-area">
+				<div class="play-button">
+					<!-- <a href="#">
+                            <i class="fas fa-play"></i>
+                        </a> -->
+				</div>
+				<div class="play-button">
+					<!-- <a href="#">
+                            <i class="fas fa-play"></i>
+                        </a> -->
+				</div>
+				<div class="word-box">
+					<div class="word" id="word1">
+						<h3>Media comes alive</h3>
+					</div>
+					<div class="word" id="word2">
+						<h3>Breathe into the world</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer id="footer">
+			<span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+		</footer>
+	</div>
+	<script>
+		function resize() {
+			$(".wrap").css("min-height", window.innerHeight + 'px');
+			$(".overlay").css("max-height", window.innerHeight + 'px');
+		}
+		window.onresize = resize;
+		resize();
+
+	</script>
+	<script type="text/javascript" src="static/js/main.js"></script>
+	<script src="static/js/particles.js"></script>
+	<script src="static/js/app.js"></script>
+</body>
+
+</html>

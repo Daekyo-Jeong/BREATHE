@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, 
+  maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/keyframe.css">
+    <script type="text/javascript" src="static/js/works.js"></script>
+    <script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+    <script src="https://cdn.rawgit.com/bradley/Blotter/3007fe6e/build/materials/fliesMaterial.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/icon/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/icon/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/icon/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/icon/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/icon/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Noto+Sans+KR:300,400,500,700,900&display=swap&subset=korean');
+
+    </style>
+    <title>BREATHE</title>
+
+    <script>
+        //        $(document).ready(function() {
+        //            $('#loading').show();
+        //        });
+
+        $(window).load(function() {
+            $('#loading').fadeOut(1500);
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="loading">
+        <div id="breathing"></div>
+        <script>
+            container = document.getElementById("breathing");
+
+            var text = new Blotter.Text("O", {
+                family: "Lato",
+                size: 200,
+                weight: 300,
+                fill: "#fff",
+                paddingLeft: 0,
+                paddingRight: 0,
+                paddingTop: 0,
+                paddingBottom: 0
+            });
+
+            var material = new Blotter.FliesMaterial();
+            material.uniforms.uPointCellWidth.value = 0.03;
+            material.uniforms.uPointRadius.value = 0.5;
+            material.uniforms.uSpeed.value = 2;
+
+            var blotter = new Blotter(material, {
+                texts: text
+            });
+
+            var scope = blotter.forText(text);
+            scope.appendTo(container);
+
+        </script>
+    </div>
+    <input type="checkbox" class="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-btn">
+        <span class="nav-icon"></span>
+    </label>
+    <div class="overlay"></div>
+    <div class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="about.html" class="nav-link outline">
+                    <h1>About</h1>
+                </a></li>
+            <li class="nav-item"><a href="works.html" class="nav-link outline">
+                    <h1>Works</h1>
+                </a></li>
+            <li class="nav-item"><a href="designer.html" class="nav-link outline">
+                    <h1>Designer</h1>
+                </a></li>
+        </ul>
+        <footer id="footer-nav">
+            <span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+        </footer>
+    </div>
+    <a href="index.html" class="logo">
+        <div class="logo-svg">
+            <img src="static/logo/logo2.gif" alt="" id="logo-symbol">
+            <img src="static/logo/logotype.svg" alt="" id="logo-type">
+        </div>
+    </a>
+    <div class="wrap" style="background: none;">
+        <div class="topbar">
+            <div class="topbar-bg" style="width: 100%; height: 100vh; background: radial-gradient(rgba(205, 232, 244, 1) 1%, rgba(152, 200, 234, 1) 25%, rgba(42, 92, 150, 1) 100%);"></div>
+            <a href="#" class="topbar-nav">
+                <div>WORKS</div>
+            </a>
+            <div class="category">
+                <div class="category-filter filter-1 category-filter-active">ALL</div>
+                <div class="category-filter mobile-x">AR/VR</div>
+                <div class="category-filter mobile-x">BRANDING</div>
+                <div class="category-filter mobile-x">INSTALLATION</div>
+                <div class="category-filter filter-2">INTERACTION</div>
+                <div class="category-filter mobile-x">MEDIA ART</div>
+                <div class="category-filter mobile-x">MOBILE</div>
+                <div class="category-filter filter-3">MOTION</div>
+                <div class="category-filter mobile-x">SERVICE DESIGN</div>
+                <div class="category-filter filter-4">UX/UI</div>
+                <div class="category-filter mobile-x">WEB</div>
+            </div>
+        </div>
+        <div class="works-bg" style="width: 100%; height: 100vh; background: radial-gradient(rgba(205, 232, 244, 1) 1%, rgba(152, 200, 234, 1) 25%, rgba(42, 92, 150, 1) 100%); position: fixed; top: 0; left: 0;"></div>
+        <div id="bg-particles"></div>
+        <div class="filter">
+            <div class="btn">
+                <input type="text" name="" class="search-txt" id="Search" placeholder="검색어를 입력하세요." />
+                <img id="search-btn" src="static/icon/search.svg" alt="">
+            </div>
+            <div class="btn">
+                <img id="grid-btn" src="static/icon/grid.svg" alt="">
+            </div>
+        </div>
+        <div class="container" id="container" style="margin:0 auto; min-height: 100vh; padding:0;">
+            <div id="works-info-area">
+                <div class="works-thumbnail-nongrid 01"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 02"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 03"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 04"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 29"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 05"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 06"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 07"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 08"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 13"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 09"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 10"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 12"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 14"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 44"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 15"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 16"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 17"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 18"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 19"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 20"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 21"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 22"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 23"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 24"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 25"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 26"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 27"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 28"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 30"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+
+                <div class="works-thumbnail-nongrid 32"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 33"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 34"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 35"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 31"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 36"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 37"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 38"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 39"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 40"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 41"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 42"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 43"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 11"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+                <div class="works-thumbnail-nongrid 45"><img src="static/images/works/07.png" alt="">
+                    <div class="works-info">
+                        <h4 class="works-title">Project Title</h4>
+                        <div class="works-student">홍길동</div>
+                    </div>
+                </div>
+            </div>
+            <ul id="works-grid">
+                <li class="works-item 01">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+branding+브랜딩+motion+모션+acatthing+어캣띵+이든솔+장동원</p>
+                </li>
+                <li class="works-item 02">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+유엑스+배우지망생+이모티콘+인터랙션+인터액션+interaction+acticon+액티콘+김유화+박주연+</p>
+                </li>
+                <li class="works-item 03">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+인터랙션+인터액션+motion+모션+after hanabi+afterhanabi+애프터하나비+애프터 하나비+김다희</p>
+                </li>
+                <li class="works-item 04">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">어웨이큰+awaken+김영주+최가영+ALL+모션캡쳐+motion capture+미디어퍼포먼스+media art+media performance+오프닝+opening+가상현실+virtual reality</p>
+                </li>
+                <li class="works-item 29">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+interaction+ux+ui+ux디자인+인터렉션+인터랙션+인터액션+웨어러블+힙쌕+진동+비트+비트풀+wearable+beat+beatful+beat-ful+이경련</p>
+                </li>
+                <li class="works-item 05">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">빌리에듀+BILLIEDU+ALL+service design+app+application+app+application+APP SERVICE+EDUCATION+BILLIARD+WATCH+MOBILE+MOTION+신연희+장혜연</p>
+                </li>
+                <li class="works-item 06">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">비움+BIUM+최정윤+홍주희+ALL+ux/ui+service design+미니멀리즘+MINIMALISM+mobile+모바일+application+app+애플리캐이션+애플리케이션+어플+앱+옷장정리</p>
+                </li>
+                <li class="works-item 07">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+BREATHE+브리드+백지웅+우경민+정대교+서동수교수님+INTERACTION+WEB+BRANDING</p>
+                </li>
+                <li class="works-item 08">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">브루인+brewin+김다솜+김철+ALL+ux/ui+app+application+mobile+service design+모바일 디자인+앱디자인+관심사+수제맥주+매칭+펍+예약+Brew-in+브루인+펍 예약</p>
+                </li>
+                <li class="works-item 13">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+인터랙션+인터액션+motion+모션+디텍티브+서스펙트+detective+suspect+interactive+인터랙티브+novel+소설+detective or suspect+이시훈</p>
+                </li>
+                <li class="works-item 09">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">도도+DODO+신은비+ALL+ux/ui+service design+app+application+mobile+UX디자인+UX리서치+UI디자인+어플리케이션+시니어+치매예방+앱+앱디자인</p>
+                </li>
+                <li class="works-item 10">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">EATOPIA+이토피아+가상 현실+가상현실+고수진+신수정+이서진+ALL+interaction+인터랙션+인터액션+VR+Virtual Reality+AR/VR+먹방+브이알</p>
+                </li>
+                <li class="works-item 12">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+heroading+hero+유정은+ux+ui+ux디자인+ui디자인+mobile+모바일+app+application+앱+앱디자인</p>
+                </li>
+                <li class="works-item 14">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">매지컬 싸이클+싸이클+사이클+매직+magic+magical+MAGICAL CYCLE+cycle+ALL+interaction+motion+media art+Media+Art+C4d+AEP+이세훈</p>
+                </li>
+                <li class="works-item 44">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+motion+인터랙션+인터액션+모션+메딕+제조+매뉴팩쳐링+manufacturing Dictionary+manufacturing+dictionary+매딕+김대관+구효</p>
+                </li>
+                <li class="works-item 15">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+ux+ui+ux디자인+moonth+캘린더+가치태그+가치+태그+이지예</p>
+                </li>
+                <li class="works-item 16">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">옵티+오비티아이+OBTI+정선하+조영서+ALL+installation+motion+mobile+web+interaction+interactive+인터랙션+인터액션+인터랙티브+구강케어+bo+구강질환+추천치약+식습관+mobile web+bo+보오+입속+잇몸+충치+착색+구취+16가지+구강+obti.space+type</p>
+                </li>
+                <li class="works-item 17">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">플랜티+plan.t+plan t+최예림+ALL+ux/ui+식물+화분+꽃집+꽃+mobile+모바일+application+app+어플+앱+애플리케이션+애플리캐이션+어플리케이션</p>
+                </li>
+                <li class="works-item 18">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+방명록+김가이+이가윤+INTERACTION+ux/ui</p>
+                </li>
+                <li class="works-item 19">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+sea the light+seathelight+씨더라이트+시더라이트+씨 더 라이트+시 더 라이트+박지유+조해윤+interaction+installation+media art+mediaart+인터랙션+인터액션+인스톨레이션+미디어아트+미디어 아트</p>
+                </li>
+                <li class="works-item 20">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+branding+app+application+app+applicationlication+app+application design+share mate+조원희+셰어메이트</p>
+                </li>
+                <li class="works-item 21">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ung+tury+ung & tury+엉터리+엉엔터리+엉 엔 터리+엉+터리+media art+interaction+인터랙션+인터액션+인스톨레이션+미디어 아트+미디어아트+installation+movie+art+이하빈</p>
+                </li>
+                <li class="works-item 22">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+vcheck+한승미+김지영+ux+ui+mobile+app+모바일+앱+간편결제+이미지검색+채식+비건+vcheck+소비+식품+유형</p>
+                </li>
+                <li class="works-item 23">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+wander+강다연+ux/ui+app+application+fitness+헬스+피트니스+앱+어플+어플리케이션+애플리케이션+Mindfulness+Walk</p>
+                </li>
+                <li class="works-item 24">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+game+motion+인터랙션+인터액션+게임+모션+가로세로사투리+가로세로 사투리+서애희</p>
+                </li>
+                <li class="works-item 25">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+installation+인터랙션+인터액션+인스톨레이션+인스톨+거시기 프로젝트+거시기프로젝트+이혜린</p>
+                </li>
+                <li class="works-item 26">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">네모락+이채리+전혜원+ALL+ux/ui+app+application+음악+국악+교육+어플리케이션+music+korean+education+ux+ui</p>
+                </li>
+                <li class="works-item 27">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+인터랙션+인터액션+뉴 맥도날드 키오스크+뉴맥도날드키오스크+맥도날드+키오스크+new mcdonald's kiosk+new mc+mcdonald's+kiosk+한은진</p>
+                </li>
+                <li class="works-item 28">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+branding+interaction+motion+브랜딩+인터랙션+인터액션+모션+달금+윤혜수+강재연</p>
+                </li>
+                <li class="works-item 30">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+game+animation+character design+인터랙션+인터액션+게임+애니메이션+캐릭터+삼도촌+김수현+노우리</p>
+                </li>
+                <li class="works-item 32">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+시간은행+시간 은행+김기현+김예인</p>
+                </li>
+                <li class="works-item 33">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+안녕+보보+오늘+하루+어떠니+interaction+interactive+book+bear+emotion+책+감정+곰+인터랙션+인터액션+유창우+installation+인스톨레이션</p>
+                </li>
+                <li class="works-item 34">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+interaction+installation+인터랙션+인터액션+인스톨레이션+영랑프로젝트+구자윤+안소율</p>
+                </li>
+                <li class="works-item 35">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+영퀴왕+김소호+INTERACTIVE+MOVIE+QUIZ+GAME+INTERACTION+인터랙션+인터액션+영화+퀴즈+게임</p>
+                </li>
+                <li class="works-item 31">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+motion+motion graphic+모션+모션그래픽+모션 그래픽+그래픽+심연주+와글와글+맞춤법</p>
+                </li>
+                <li class="works-item 36">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">우리 안에서+유선영+윤신희+ALL+interaction+교감+애니메이션+animation+돌고래+dolphin+바다+sea+키넥트+kinect+인터랙티브 애니매이션+인터랙티브 애니메이션+interactive animation+인터랙티브+interactive+애니메이션+애니매이션+animation</p>
+                </li>
+                <li class="works-item 37">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+ux+ui+ux디자인+ui디자인+mobile+service design+모바일+앱+앱디자인+app+application+네비게이션+자연+숲+강창모+박나현+울림</p>
+                </li>
+                <li class="works-item 38">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">이랑이랑+고은솔+김서린+김지수+ALL+service design+interaction+motion+ux/ui+branding</p>
+                </li>
+                <li class="works-item 39">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+홀로그램+애니메이션+캐릭터디자인+모션+hologram+animation+character design+motion+인디언과 함께 전생을+인디언과함께+박동수+박수근+이양호</p>
+                </li>
+                <li class="works-item 40">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+ux+ui+ux디자인+ui디자인+모바일+모바일디자인+mobile+app+application+앱+앱디자인+어플리케이션+일맥상통+김세진+안채영+맥주+일기+혼맥+정기구독+힐링+uxui</p>
+                </li>
+                <li class="works-item 41">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+ux/ui+mobile+app+application+service design+앱+앱디자인+서비스+서비스디자인+모바일+잘알고+김현수</p>
+                </li>
+                <li class="works-item 42">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+installation+ar+AR/VR+증강현실+인스톨+설치+찾아보시괴+백중영+채지혜</p>
+                </li>
+                <li class="works-item 43">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">청들청들+청들+김아름+김현정+이윤지+ALL+installation+interaction+인터랙션+인터액션+branding+브랜딩+단청+소원+청+단청 내 청을 들어줘</p>
+                </li>
+                <li class="works-item 11">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+motion+모션+branding+브랜딩+헬로우뮤지움+헬로우 뮤지움+헬로 뮤지움+hellomuseum+hello museum+이지은</p>
+                </li>
+                <li class="works-item 45">
+                    <a href="static/list/07.html" class="works-link">
+                        0
+                        <div class="works-content">
+                            <div class="works-thumbnail"><img src="static/images/works/07.png" alt="">
+                                <div class="works-info">
+                                    <h4 class="works-title">Project Title</h4>
+                                    <div class="works-student">홍길동</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="keyword">ALL+media art+mediaart+installation+interaction+인터랙션+인터액션+인스톨레이션+미디어아트+미디어 아트+휴+hue+여강수+김수경</p>
+                </li>
+            </ul>
+
+            <!-- (li.works-item>(a.works-link>div.works-content>div.works-thumbnail>{<img src="static/images/works/07.png" alt="">
+
+        </div>
+        <a href="#">
+            <div id="totop">
+                <div class="totop-btn">
+                    <img src="static/icon/top.svg" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <script>
+        function resize() {
+            $(".wrap").css("min-height", window.innerHeight + 'px');
+            $(".overlay").css("max-height", window.innerHeight + 'px');
+        }
+        window.onresize = resize;
+        resize();
+
+    </script>
+    <script src="static/js/particles.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+
+</html>

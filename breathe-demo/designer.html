@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, 
+  maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/keyframe.css">
+    <script type="text/javascript" src="static/js/designer.js"></script>
+    <script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+    <script src="https://cdn.rawgit.com/bradley/Blotter/3007fe6e/build/materials/fliesMaterial.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/icon/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/icon/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/icon/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/icon/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/icon/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Noto+Sans+KR:300,400,500,700,900&display=swap&subset=korean');
+
+    </style>
+
+    <title>BREATHE</title>
+
+    <script>
+        //        $(document).ready(function() {
+        //            $('#loading').show();
+        //        });
+
+        $(window).load(function() {
+            $('#loading').fadeOut(1500);
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="loading">
+        <div id="breathing"></div>
+        <script>
+            container = document.getElementById("breathing");
+
+            var text = new Blotter.Text("O", {
+                family: "Lato",
+                size: 200,
+                weight: 300,
+                fill: "#fff",
+                paddingLeft: 0,
+                paddingRight: 0,
+                paddingTop: 0,
+                paddingBottom: 0
+            });
+
+            var material = new Blotter.FliesMaterial();
+            material.uniforms.uPointCellWidth.value = 0.03;
+            material.uniforms.uPointRadius.value = 0.5;
+            material.uniforms.uSpeed.value = 2;
+
+            var blotter = new Blotter(material, {
+                texts: text
+            });
+
+            var scope = blotter.forText(text);
+            scope.appendTo(container);
+
+        </script>
+    </div>
+    <input type="checkbox" class="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-btn">
+        <span class="nav-icon"></span>
+    </label>
+    <div class="overlay"></div>
+    <div class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="about.html" class="nav-link outline">
+                    <h1>About</h1>
+                </a></li>
+            <li class="nav-item"><a href="works.html" class="nav-link outline">
+                    <h1>Works</h1>
+                </a></li>
+            <li class="nav-item"><a href="designer.html" class="nav-link outline">
+                    <h1>Designer</h1>
+                </a></li>
+        </ul>
+        <footer id="footer-nav">
+            <span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+        </footer>
+    </div>
+
+    <a href="index.html" class="logo">
+        <div class="logo-svg">
+            <img src="static/logo/logo2.gif" alt="" id="logo-symbol">
+            <img src="static/logo/logotype.svg" alt="" id="logo-type">
+        </div>
+    </a>
+
+    <div class="wrap" style="background: none; padding-bottom: 100px">
+        <div class="topbar">
+            <div class="topbar-bg" style="width: 100%; height: 100vh; background: radial-gradient(rgba(205, 232, 244, 1) 1%, rgba(152, 200, 234, 1) 25%, rgba(42, 92, 150, 1) 100%);"></div>
+            <a href="#" class="topbar-nav">
+                <div>DESIGNER</div>
+            </a>
+            <!-- <div class="category">
+                <div class="category-filter category-filter-active">모든학생</div>
+                <div class="category-filter">황인경교수님</div>
+                <div class="category-filter">최문희교수님</div>
+                <div class="category-filter">서동수교수님</div>
+                <div class="category-filter mobile-x">이현진교수님</div>
+            </div> -->
+        </div>
+        <div class="bg-radial" style="width: 100%; height: 100vh; background: radial-gradient(rgba(205, 232, 244, 1) 1%, rgba(152, 200, 234, 1) 25%, rgba(42, 92, 150, 1) 100%); position: fixed; top: 0; left: 0; z-index: -1;"></div>
+        <div id="bg-particles"></div>
+        <div class="container" style="margin: 0 auto; padding: 0;">
+            <ul class="designers-grid">
+
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                <li class="designers-item">
+                    <div class="designer-profile"><img src="static/images/designer/d-01.png" alt="학생사진"><img src="static/images/designer/d-01.png" alt="학생사진"></div>
+                    <div class="designer-profile-info">
+                        <div class="designer-name">홍길동</div>
+                    </div>
+                </li>
+                
+                <!--  아래 주석 복사해서 사용하면 됩니다. -->
+                <!-- (li.designers-item>(div.designer-profile{<img src="static/images/designer/d-011.png" alt="학생이름">})+(div.designer-profile-info>h4.designer-name{학생이름}))*<img src="static/images/designer/d-011.png" alt="학생이름">숫자
+                     -->
+            </ul>
+            <div class="designers-info">
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+<div class="designers-info-item">
+    <div class="designers-exit-btn"><img src="static/icon/exit.svg" alt="exit button"></div>
+    <h3 class="designers-name">홍길동</h3>
+    <div class="designers-email">demo@email.com</div>
+    <p class="designers-impression">별 소학교 까닭이요, 멀리 당신은 아침이 있습니다. 파란 하나에 당신은 별이 헤는 잠, 버리었습니다. 지나고 멀리 가득 거외다. 어머님, 가슴속에 소학교 있습니다. 벌레는 이름자를 지나가는 가슴속에 봅니다.</p>
+    <a href="static/list/07.html" class="designers-lookwork">졸업작품 보기</a>
+</div>
+
+            </div>
+        </div>
+        <a href="#">
+            <div id="totop">
+                <div class="totop-btn">
+                    <img src="static/icon/top.svg" alt="">
+                </div>
+            </div>
+        </a>
+        <footer id="footer-about">
+            <span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+        </footer>
+    </div>
+    <script>
+        function resize() {
+            $(".wrap").css("min-height", window.innerHeight + 'px');
+            $(".overlay").css("max-height", window.innerHeight + 'px');
+        }
+        window.onresize = resize;
+        resize();
+
+    </script>
+    <script src="static/js/particles.js"></script>
+</body>
+
+</html>

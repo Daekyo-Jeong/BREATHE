@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, 
+  maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/keyframe.css">
+    <script type="text/javascript" src="static/js/about.js"></script>
+    <script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+    <script src="https://cdn.rawgit.com/bradley/Blotter/3007fe6e/build/materials/fliesMaterial.js"></script>
+    <script src="static/js/parallax/jquery-2.1.3.min.js"></script>
+    <script src="static/js/parallax/jquery.easing.1.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/icon/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/icon/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/icon/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/icon/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/icon/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Noto+Sans+KR:300,400,500,700,900&display=swap&subset=korean');
+
+    </style>
+    <!--  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script>
+        var date = document.getElementsByClassName("date");
+        $(window).load(function() {
+            $('#loading').fadeOut(1500);
+
+            setTimeout(function() {
+                $(date[0])
+                    .css("opacity", "1");
+            }, 500);
+            setTimeout(function() {
+                $(date[1])
+                    .css("opacity", "1");
+            }, 1000);
+            setTimeout(function() {
+                $(date[2])
+                    .css("opacity", "1");
+            }, 1000);
+            setTimeout(function() {
+                $(date[3])
+                    .css("opacity", "1");
+            }, 1000);
+            setTimeout(function() {
+                $(date[4])
+                    .css("opacity", "1");
+            }, 1500);
+            setTimeout(function() {
+                $(date[5])
+                    .css("opacity", "1");
+            }, 2000);
+            setTimeout(function() {
+                $(date[6])
+                    .css("opacity", "1");
+            }, 2500);
+            setTimeout(function() {
+                $(date[7])
+                    .css("opacity", "1");
+            }, 2500);
+        });
+
+    </script>
+    <title>BREATHE</title>
+</head>
+
+<body>
+    <div id="loading">
+        <div id="breathing"></div>
+        <script>
+            container = document.getElementById("breathing");
+            var text = new Blotter.Text("O", {
+                family: "Lato",
+                size: 200,
+                weight: 300,
+                fill: "#fff",
+                paddingLeft: 0,
+                paddingRight: 0,
+                paddingTop: 0,
+                paddingBottom: 0
+            });
+            var material = new Blotter.FliesMaterial();
+            material.uniforms.uPointCellWidth.value = 0.03;
+            material.uniforms.uPointRadius.value = 0.5;
+            material.uniforms.uSpeed.value = 2;
+            var blotter = new Blotter(material, {
+                texts: text
+            });
+            var scope = blotter.forText(text);
+            scope.appendTo(container);
+        </script>
+    </div>
+
+    <div class="about-bg" style="width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background: radial-gradient(rgba(205, 232, 244, 1) 1%, rgba(152, 200, 234, 1) 25%, rgba(42, 92, 150, 1) 100%);
+   "></div>
+    <div id="bg-particles"></div>
+
+    <input type="checkbox" class="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-btn">
+        <span class="nav-icon"></span>
+    </label>
+    <div class="overlay"></div>
+    <div class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="about.html" class="nav-link outline">
+                    <h1>About</h1>
+                </a></li>
+            <li class="nav-item"><a href="works.html" class="nav-link outline">
+                    <h1>Works</h1>
+                </a></li>
+            <li class="nav-item"><a href="designer.html" class="nav-link outline">
+                    <h1>Designer</h1>
+                </a></li>
+        </ul>
+        <footer id="footer-nav">
+            <span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+        </footer>
+    </div>
+
+    <a href="index.html" class="logo">
+        <div class="logo-svg">
+            <img src="static/logo/logo2.gif" alt="" id="logo-symbol">
+            <img src="static/logo/logotype.svg" alt="" id="logo-type">
+        </div>
+    </a>
+
+    <div class="wrap" style="background: none;">
+        <div class="topbar">
+            <div class="topbar-bg" style="width: 100%; height: 100vh; background: radial-gradient(rgba(205, 232, 244, 1) 1%, rgba(152, 200, 234, 1) 25%, rgba(42, 92, 150, 1) 100%);"></div>
+            <a href="#" class="topbar-nav">
+                <div>ABOUT</div>
+            </a>
+            <div class="category">
+                <a href="#blank-breathe" class="category-scroll scroll-1">BREATHE</a>
+                <a href="#blank-dmd" class="category-scroll scroll-2">DMD</a>
+                <a href="#blank-professor" class="category-scroll scroll-3">PROFESSOR</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="particle-text-wrap">
+                <div class="particle-text" id="particle-text1"></div>
+                <script>
+                    container = document.getElementById("particle-text1");
+                    var text = new Blotter.Text("B R E A T H E", {
+                        family: "Lato",
+                        size: 200,
+                        weight: 400,
+                        fill: "#fff",
+                        paddingLeft: 0,
+                        paddingRight: 0,
+                        paddingTop: 0,
+                        paddingBottom: 0
+                    });
+                    var material = new Blotter.FliesMaterial();
+                    material.uniforms.uPointCellWidth.value = 0.02;
+                    material.uniforms.uPointRadius.value = 0.1;
+                    material.uniforms.uSpeed.value = 0.1;
+                    var blotter = new Blotter(material, {
+                        texts: text
+                    });
+                    var scope = blotter.forText(text);
+                    scope.appendTo(container);
+
+                </script>
+                <div class="particle-text" id="particle-text2"></div>
+                <script>
+                    container = document.getElementById("particle-text2");
+                    var text = new Blotter.Text("B R E A T H E", {
+                        family: "Lato",
+                        size: 200,
+                        weight: 400,
+                        fill: "#fff",
+                        paddingLeft: 0,
+                        paddingRight: 0,
+                        paddingTop: 0,
+                        paddingBottom: 0
+                    });
+                    var material = new Blotter.FliesMaterial();
+                    material.uniforms.uPointCellWidth.value = 0.03;
+                    material.uniforms.uPointRadius.value = 0.2;
+                    material.uniforms.uSpeed.value = 0.5;
+                    var blotter = new Blotter(material, {
+                        texts: text
+                    });
+                    var scope = blotter.forText(text);
+                    scope.appendTo(container);
+
+                </script>
+                <div class="particle-text" id="particle-text3"></div>
+                <script>
+                    container = document.getElementById("particle-text3");
+                    var text = new Blotter.Text("B R E A T H E", {
+                        family: "Lato",
+                        size: 200,
+                        weight: 400,
+                        fill: "#fff",
+                        paddingLeft: 0,
+                        paddingRight: 0,
+                        paddingTop: 0,
+                        paddingBottom: 0
+                    });
+                    var material = new Blotter.FliesMaterial();
+                    material.uniforms.uPointCellWidth.value = 0.035;
+                    material.uniforms.uPointRadius.value = 0.3;
+                    material.uniforms.uSpeed.value = 0.5;
+                    var blotter = new Blotter(material, {
+                        texts: text
+                    });
+                    var scope = blotter.forText(text);
+                    scope.appendTo(container);
+
+                </script>
+            </div>
+            <div id="date">
+                <h1 class="date outline">HONGIK UNVERSITY</h1>
+                <h1 class="date outline i-block f-left">SCHOOL OF&nbsp;</h1>
+                <h1 class="date outline i-block f-left">DESIGN&nbsp;</h1>
+                <h1 class="date outline i-block">AND ARTS&nbsp;</h1>
+                <h1 class="date">DIGITAL MEDIA DESIGN</h1>
+                <h1 class="date outline">GRADUATION EXHIBITION</h1>
+                <h1 class="date i-block f-left">2019.&nbsp;</h1>
+                <h1 class="date i-block">11. 15 - 17.</h1>
+            </div>
+            <div class="breathe-wrap">
+                <div class="blank" id="blank-breathe"></div>
+                <h3 class="title" id="breathe-title">BREATHE</h3>
+                <div class="text" id="breathe-text">
+                    <p>4차 산업혁명이 어느 때보다 다양한 분야에서 무르익고 있는 현재,<br>
+                        어쩌면 디지털미디어는 살아 숨 쉬게 되었습니다. (media comes alive) <br>
+                        디지털미디어디자인 전공 학생들은 디지털미디어에 <br>
+                        그리고 세상에 숨결을 불어 넣습니다. (breathe into the world)
+                        <br>
+                        <br>
+                        2019년 디지털미디어디자인 졸업 전시회에서는
+                        모바일 및 웹 서비스, 사물인터넷 서비스, 모션 브랜딩 등
+                        학생들의 창의성이 돋보이면서 사회와 다양한 분야의 기업에서
+                        활용, 발전 가능한 작품뿐만 아니라 관람객을 작품 속으로 끌어들여
+                        디지털 감성을 일깨우는 인터랙티브 미디어 작품들을 전시합니다.
+
+                    </p>
+                </div>
+                <div class="img" id="breathe-content">
+                    <video width="100%" height="auto" src="static/video/promotion.mp4" preload="auto" controls>
+                    </video>
+                </div>
+            </div>
+            <div id="slogan">
+                <h1 class="slogan outline f-left">MEDIA&nbsp;</h1>
+                <h1 class="slogan outline i-block f-left">COMES ALIVE.&nbsp;&nbsp;</h1>
+                <h1 class="slogan f-left">BREATHE&nbsp;</h1>
+                <h1 class="slogan outline f-left">INTO&nbsp;</h1>
+                <h1 class="slogan outline i-block c-both">THE WORLD.</h1>
+            </div>
+            <div class="dmd-wrap">
+                <div class="blank" id="blank-dmd"></div>
+                <h3 class="title" id="dmd-title">Digital Media Design</h3>
+                <div class="text" id="dmd-text">
+                    <p>디지털미디어디자인 전공에서는 디지털 테크놀로지가 커뮤니케이션 미디어에 응용되면서 도래한 디지털미디어의 새로운 특성과 가능성들을 탐구하는 것을 기본 방향으로 하고 있습니다. 디지털 미디어는 사용자와 미디어가 상호작용하는 실시간 인터액션으로 대표되는 새로운 특성들을 지니고 있는데, 이는 디자이너와 아티스트에게 새로운 표현의 가능성들을 열어 주는 것과 동시에 디자이너가 새로운 소양과 지식을 갖출 것을 요구 하고 있습니다. 현재 본 전공에서는 이러한 새로운 디자이너의 양성을 목적으로 모바일/웹서비스, 증강현실, 서비스 디자인, 모션브랜딩, 인포그래픽 영상, 인스피레이션 모션, 인터렉티브 인포메이션, 인터렉션 디자인, 피지컬 컴퓨팅 등 디지털 미디어의 다양한 분야에 걸쳐 활발한 교육과 연구를 진행하고 있습니다.</p>
+                </div>
+                <div class="img" id="dmd-content">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img src="static/images/about/dmd/5.png" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="static/images/about/dmd/2.jpg" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="static/images/about/dmd/3.png" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="static/images/about/dmd/6.png" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="static/images/about/dmd/7.png" style="width:100%">
+                        </div>
+                    </div>
+                    <div style="text-align:center; display: none;">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="professor-wrap">
+                <div class="blank" id="blank-professor"></div>
+                <h3 class="title" id="professor-title">Professor</h3>
+                <div class="professor-list">
+                    <a class="professor-item professor-active">
+                        <div class="professor-image-wrap">
+                            <img src="static/images/about/professor/1.jpg">
+                        </div>
+                        <div class="professor-name">
+                            <div>황인경 교수님</div>
+                        </div>
+                        <div class="professor-owner">
+                            <div>전공 학과장</div>
+                        </div>
+                    </a>
+                    <a class="professor-item">
+                        <div class="professor-image-wrap">
+                            <img src="static/images/about/professor/2.jpg">
+                        </div>
+                        <div class="professor-name">
+                            <div>서동수 교수님</div>
+                        </div>
+                        <div class="professor-owner"><br></div>
+                    </a>
+                    <a class="professor-item">
+                        <div class="professor-image-wrap">
+                            <img src="static/images/about/professor/3.jpg">
+                        </div>
+                        <div class="professor-name">
+                            <div>최문희 교수님</div>
+                        </div>
+                        <div class="professor-owner"><br></div>
+                    </a>
+                    <a class="professor-item">
+                        <div class="professor-image-wrap">
+                            <img src="static/images/about/professor/4.jpg">
+                        </div>
+                        <div class="professor-name">
+                            <div>이현진 교수님</div>
+                        </div>
+                        <div class="professor-owner"><br></div>
+                    </a>
+                    <a class="professor-item">
+                        <div class="professor-image-wrap">
+                            <img src="static/images/about/professor/5.jpg">
+                        </div>
+                        <div class="professor-name">
+                            <div>김건동 교수님</div>
+                        </div>
+                        <div class="professor-owner"><br></div>
+                    </a>
+                    <a class="professor-item">
+                        <div class="professor-image-wrap">
+                            <img src="static/images/about/professor/6.jpg">
+                        </div>
+                        <div class="professor-name">
+                            <div>김영희 교수님</div>
+                        </div>
+                        <div class="professor-owner"><br></div>
+                    </a>
+                </div>
+                <div class="professor-list-m">
+                    <div class="professor-list-control">
+                        <div class="professor-list-control-btn" style="left: 0;">
+                            <img src="static/icon/prev.svg" alt="">
+                        </div>
+                        <div class="professor-list-control-btn" style="right: 0;">
+                            <img src="static/icon/next.svg" alt="">
+                        </div>
+                        <div class="professor-list-control-nav">
+                            <div class="professor-list-control-nav-btn btn-active"></div>
+                            <div class="professor-list-control-nav-btn"></div>
+                            <div class="professor-list-control-nav-btn"></div>
+                            <div class="professor-list-control-nav-btn"></div>
+                            <div class="professor-list-control-nav-btn"></div>
+                            <div class="professor-list-control-nav-btn"></div>
+                        </div>
+                    </div>
+                    <div class="professor-list-m-m">
+                        <a class="professor-item-m professor-item-m-active">
+                            <div class="professor-image">
+                                <img src="static/images/about/professor/1.jpg">
+                            </div>
+                            <div class="professor-name">
+                                황인경 교수님
+                            </div>
+                            <div class="professor-owner">
+                                전공 학과장
+                            </div>
+                        </a>
+                        <a class="professor-item-m">
+                            <div class="professor-image">
+                                <img src="static/images/about/professor/2.jpg">
+                            </div>
+                            <div class="professor-name">
+                                서동수 교수님
+                            </div>
+                            <div class="professor-owner"><br></div>
+                        </a>
+                        <a class="professor-item-m">
+                            <div class="professor-image">
+                                <img src="static/images/about/professor/3.jpg">
+                            </div>
+                            <div class="professor-name">
+                                최문희 교수님
+                            </div>
+                            <div class="professor-owner"><br></div>
+                        </a>
+                        <a class="professor-item-m">
+                            <div class="professor-image">
+                                <img src="static/images/about/professor/4.jpg">
+                            </div>
+                            <div class="professor-name">
+                                이현진 교수님
+                            </div>
+                            <div class="professor-owner"><br></div>
+                        </a>
+                        <a class="professor-item-m">
+                            <div class="professor-image">
+                                <img src="static/images/about/professor/5.jpg">
+                            </div>
+                            <div class="professor-name">
+                                김건동 교수님
+                            </div>
+                            <div class="professor-owner"><br></div>
+                        </a>
+                        <a class="professor-item-m">
+                            <div class="professor-image">
+                                <img src="static/images/about/professor/6.jpg">
+                            </div>
+                            <div class="professor-name">
+                                김영희 교수님
+                            </div>
+                            <div class="professor-owner"><br></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="professor-text-list">
+                    <div class="professor-text" style="opacity: 1;">
+                        <p>
+                            어른들이 흔히 하는 말이 있지요.<br>
+                            '요즘 애들은...'<br>
+                            '라떼는 말이야...'<br><br>
+
+                            어느 새 '요즘 애들'을 10년 넘게 가르치며 어느 새 또 이 맘때를 맞고 있네요.<br><br>
+
+                            '라떼'를 돌이켜 보건대, 우리 디미디 학생들이 작품 해내는 역량을 보면,<br>
+                            지식과 기술의 수준이 비교할 수 없을 정도로 많고도 높아졌음을 느낍니다.<br><br>
+
+                            그런데, 이렇게 진화된 시대에 살고 있는 여러분들은 과연 행복한가..?<br>
+                            하는 생각도 따라옵니다.<br>
+                            사회가 발달함에 따라 인간의 행복이 비례하여 늘어나는 것은 아닌 모순이 있습니다.<br><br>
+
+                            허나, 이렇게 힘든 4년을 열심히 살아온 여러분들은 자부심을 가져도 좋습니다.<br>
+                            힘든 시간만큼 쌓인 실력들은 어느 형태로든 보상으로 돌아옵니다.<br><br>
+
+                            졸업이라는 하나의 산을 넘고나면, 어느 새 부쩍 성장해 있는 자신들을 발견하게 될 것입니다.<br><br>
+
+                            마지막 결실을 눈 앞에 둔 여러분들의 졸업을 진심으로 축하합니다...!<br>
+                            앞으로 좋은 일들이 많이 있을 것입니다.
+                        </p>
+                    </div>
+                    <div class="professor-text">
+                        <p>
+                            그 동안 졸업 작품을 지도하면서 정이 많이 든 여러분, 졸업을 축하합니다. <br>1학년 때, 2학년 때, 또는 지난 3월 개강 때 우리가 서로 마주보았을 적에, <br>우리에게 이런 날이 올 것을 과연 우리는 생각할 수 있었을까요. <br>시간은 흘렀고 우리는 정이 들었고 졸업은 이제
+                            차가운 겨울만 한 장 넘기면 <br>그 뒤에 이미 뒷짐 지고 어슬렁거리고 있읍니다. <br>여러분을 생각하자니 엘라 피츠제럴드가 노래한 <br>Bewitched, bothered, and
+                            bewildered 노래의 주인공이 떠오릅니다. <br>길다란 이 노래에서 그녀는 사랑에 빠져 황홀한
+                            기쁨을 노래하지만 <br>결국 그 격정은 끝나고 담담히 자신을 돌아보게 됩니다. <br>노래의 주인공처럼
+                            여러분도 기쁨과 호기심이 넘실대고, <br>동시에 혼란스럽고, 피곤하며, 왠지 바지 안에 개미들이
+                            라도 들어온 것처럼 <br>가만히 있을 수 없이 초조하면서도 에너지가 넘치던 대학 시절을 이제
+                            지나보내는 것이 아닌가 합니다. <br>노래의 가사에서처럼 여러분이 뜨거운 젊음에서 배우고 얻은 바가 있었기를 바라며, <br>이제 혼란스럽지 아니하고 맑고 환한 곳에 나아가 새로운 기쁨을 얻기를 기원합니다. <br>졸업을
+                            축하합니다. <br>Burned a lot, but learned a lot
+                            <br>And now you are broke, so you earned a lot
+                            <br>Romance, finis, your chance, finis,
+                            <br>Those ants that invaded my pants, finis
+                            <br>Bewitched, bothered, and bewildered no more
+                        </p>
+
+                    </div>
+                    <div class="professor-text">
+                        <p>
+                            졸업이란, 또 다른 세상으로 가기 위한 시작입니다<br>
+                            소중하고 아름다운 꿈을 졸업이라는 과정을 통하여 이루면서 학교를 마치고<br>
+                            세상에 나가 살다보면 늘 처음 먹었던 마음이 흔딜리가 마련인데,<br>
+                            우선 마음속의 바람이 흔들릴 때 마다 자기 자신을 가다듬고 최선의 노력을다해<br>
+                            꿈을 이루었으면 하는 바람 입니다 <br><br>
+
+                            깊어가는 가을이자 겨울이 시작되는 길목에서, 길 위에 은행잎들이 노랗게 물들고<br>
+                            잠시 후면 떨어지듯 만남과 헤어짐이 있듯이….. 언젠가는 다시 만날 것이라고 생각합니다 <br><br>
+
+                            하늘의 풍경이 주제로 된, 소담스러운 집과 꽃들이 서로를 이해하고 조화로운
+                            삶을 희망하는 <br>그리고 즐거운 색들의 풍경이 꿈을 실현시키는 통로로서 집을
+                            그리고 자연을 그렸습니다. <br>하늘은 언제나 인간의 이상이었고 염원과 미래를
+                            책임 질 것만 같은 미지의 영역입니다. <br>하늘은 해와 달과 별들이 분명한 실체를
+                            지니고 있지만 그것을 이상과 희망을 간직한 <br>꿈의 영역으로 이해하고 싶습니다.<br><br>
+                            모두에게 더 소중한 미래를 꿈 꿀 수 있게.. <br>'DREAM' 이라는 작품을 선물 합니다<br>
+                            그리고
+                            출발하는 시간들이 축복으로 가득하기를 기도합니다<br>
+                            많이 많이 축하합니다
+                        </p>
+                    </div>
+                    <div class="professor-text">
+                        <p>
+                            오늘은 가을 햇살이 교정을 아름답게 비추고 있습니다. <br>졸전 심사를 막 끝낸 시점이라 여러분의 마음에는 긴장과 설램이 가득할 것 같습니다. <br>졸업이라는 관문을 막 통과중인 여러분들이 다음에 마주할 관문들도 오늘처럼 <br>잘 준비된 마음으로 긴장과 설램을 잘 조율하여 통과했으면 하는 마음입니다. <br><br>세상은 물질적으로 더 편리하고 더 풍요해지고 있지만 <br>우리의 마음이나 정신도 같이 풍요로운 것 같지는 않습니다. <br>여러분의 생각과 활동들이 여러분 주변과 관련 분야에서 <br>마음을 행복하게 하는 역할을 할 수 있다면 <br>오늘 우리가 노력했던 작업들이 더 보람있을것 같습니다. <br>우리 모두 행복하게 지내고 또 봅시다.
+                        </p>
+                    </div>
+                    <div class="professor-text">
+                        <p>
+                            올해는 연구년이어서 먼 곳에서 축하 글을 남깁니다.<br>
+                            비록 4학년 졸업전시 준비 과정을 함께하지는 못했지만,<br>
+                            해마다 선배들이 그랬듯이 올해도 최선을 다하신 여러분들의 노력과 열정이 멀리까지 전해집니다.<br>
+                            해외에 나올 때마다 느낍니다만 새로운 장소에서, 새로운 사람들을 만나 소중한 인연을 맺고,<br>
+                            다양한 지혜와 경험을 나누다 보면 저 스스로가 또 다른 새로움으로 충만해짐을 느낍니다.<br>
+                            올해 졸전 주제처럼 여러분들도 졸업 후 더 큰 세상에서 다양한 사람들을 만나고<br>
+                            지혜를 나누며 여러분들만의 고유의 숨결을 세상에 불어 넣길 바랍니다.<br>
+                            아무쪼록 졸업 전시 참석은 못 하지만 다시 한번 최선을 다하신 여러분들의 열정에 박수 드리며,<br>
+                            여러분들의 졸업을 진심으로 축하드립니다!
+                        </p>
+                    </div>
+                    <div class="professor-text">
+                        <p>
+                            은행나무 낙엽이 노랗게 길을 덮었던 계절이 엊그제 같은데 그 곳은 벌써 깊은 가을로 들어섰겠네요. <br>이 곳은 봄이 와서 보랏빛 자카란다꽃들이 흐드러지게 피어서 길을 덮고 있습니다. <br>이렇게 계절도 다른 먼 곳에서 2019년도 디지털미디어디자인 전공 졸업전시회를 <br>축하하는 글을 보내면서 만감이 교차합니다. <br>아마도 1, 2학년 그리고 3학년이었을 때 인터랙션디자인 관련 과목들을 수강하면서 <br>나와 함께 했던 기억들이 있는 학생들도 있을 것 같네요. <br>여러분들의 4학년 졸업 작품과정을 직접 옆에서 지도해주지는 못했지만 <br>전공교수님들의 지도와 여러분들의 역량으로 올해도 멋지게 전시를 해낼 거란 생각이 듭니다. <br>그리고 이번 졸업 전시회에서 또 어떤 의미 깊은 주제를 가지고 고민한 <br>새로운 창의적 작품들을 보여줄까 하는 기대도 함께 합니다. <br>지난 1년 동안 땀 흘려 준비해 온 작품들을 사회에 선보이는 졸업전시회와 더불어 <br>여러분들의 졸업을 진심으로 축하합니다. <br>졸업이란 또 다른 시작을 의미하기에 졸업 후 새로운 시작과 함께 <br>더욱 성장할 여러분의 가능성과 잠재력에 또한 응원을 보냅니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#">
+            <div id="totop">
+                <div class="totop-btn">
+                    <img src="static/icon/top.svg" alt="">
+                </div>
+            </div>
+        </a>
+        <footer id="footer-about">
+            <span>HONGIK UNIV. DIGITAL MEDIA DESIGN</span><br>GRADUATION EXHIBITION 2019 - BREATHE
+        </footer>
+    </div>
+
+
+
+    <script>
+        function resize() {
+            $(".wrap").css("min-height", window.innerHeight + 'px');
+            $(".overlay").css("max-height", window.innerHeight + 'px');
+        }
+        window.onresize = resize;
+        resize();
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                $(slides[i]).fadeOut(1000);
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            $(slides[slideIndex - 1]).fadeIn(1000);
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+
+    </script>
+    <script src="static/js/particles.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+
+</html>
