@@ -1,6 +1,5 @@
 # BREATHE
-## HONGIK UNIV. DIGITAL MEDIA DESIGN
-## GRADUATION EXHIBITION 2019 - BREATHE
+## HONGIK UNIV. DIGITAL MEDIA DESIGN <br> GRADUATION EXHIBITION 2019 - BREATHE
 
 <br>
 
@@ -8,11 +7,11 @@
 2019 디지털미디어디자인 전공 졸업전시회 작품 아카이빙 웹사이트
 <br>
 
-[웹사이트 데모 보러가기](링크)
+[웹사이트 데모 보러가기](https://daekyo-jeong.github.io/Project/breathe-demo/)
 
 [브랜딩 비핸스 보러가기](https://www.behance.net/gallery/87076155/BREATHE-Hongik-DMD-Graduation-Exhibition)
 
-웹사이트 링크 : ~~[hongikdmd.com/breathe](데모사이트)~~ * 현재 링크만료
+웹사이트 링크 : ~~[hongikdmd.com/breathe](https://daekyo-jeong.github.io/Project/breathe-demo/)~~ * 현재 링크만료
 
 <br>
 
